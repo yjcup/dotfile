@@ -1,6 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+#
 # for examples
+# kk
 setproxy() {
 	export http_proxy=http://host.orb.internal:7890
 	export https_proxy=http://host.orb.internal:7890
@@ -11,6 +13,8 @@ alias vi="nvim"
 alias tr="trash"
 alias lg="lazygit"
 alias jo="joshuto"
+alias python="python3"
+alias py="python3"
 #TERM="xterm-256color"
 
 # If not running interactively, don't do anything

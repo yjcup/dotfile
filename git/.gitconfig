@@ -1,6 +1,6 @@
 # Basic config generated from your macOS config by OrbStack.
 # Feel free to edit it or symlink /Users/yjc/.gitconfig instead.
-
+# add something
 [user]
 	name = yjc
 	email = sett6@qq.com
