@@ -82,10 +82,12 @@ return {
 			{ "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
 		},
 	},
+
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
 	},
+	-- tmux
 	{
 		"christoomey/vim-tmux-navigator",
 		keys = {
@@ -94,5 +96,55 @@ return {
 			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 		},
-	}
+	},
+	{
+		'nvim-lualine/lualine.nvim',
+		opts = {
+			icons_enabled = true,
+			theme = 'auto',
+			component_separators = { left = '', right = '' },
+			section_separators = { left = '', right = '' },
+			disabled_filetypes = {
+				statusline = {},
+				winbar = {},
+			},
+			ignore_focus = {},
+			always_divide_middle = true,
+			globalstatus = false,
+			refresh = {
+				statusline = 1000,
+				tabline = 1000,
+				winbar = 1000,
+			}
+		},
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
+	{
+		"akinsho/bufferline.nvim",
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle Pin" },
+			{ "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+			{ "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>",          desc = "Delete Other Buffers" },
+			{ "<leader>br", "<Cmd>BufferLineCloseRight<CR>",           desc = "Delete Buffers to the Right" },
+			{ "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>",            desc = "Delete Buffers to the Left" },
+			{ "E",          "<cmd>BufferLineCyclePrev<cr>",            desc = "Prev Buffer" },
+			{ "R",          "<cmd>BufferLineCycleNext<cr>",            desc = "Next Buffer" },
+		},
+		config = function()
+			require("bufferline").setup();
+		end
+	},
+	{
+		-- 记住退出lvim时光标在文件的行号,重新打开此文件时自动跳转到上次光标行
+		"ethanholz/nvim-lastplace",
+		-- event = "BufRead",
+		config = function()
+			require("nvim-lastplace").setup({
+				lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+				lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+				lastplace_open_folds = true,
+			})
+		end,
+	},
 }

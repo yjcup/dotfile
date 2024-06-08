@@ -12,3 +12,7 @@ opt.autoindent = true     -- copy indent from current line when starting new one
 opt.ignorecase = true     -- ignore case when searching
 opt.smartcase = true      -- if you include mixed case in your search, assumes you want case-sensitive
 opt.cursorline = true
+opt.foldmethod = "expr"   -- fold with nvim_treesitter
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldenable = false    -- no fold to be applied when open a file
+opt.foldlevel = 99        -- if not set this, fold will be everywhere
