@@ -130,6 +130,8 @@ keymap = [
   { keys = ["g", "r"], commands = ["cd /"] },
   { keys = ["g", "c"], commands = ["cd ~/.config"] },
   { keys = ["g", "d"], commands = ["cd ~/Downloads"] },
+  { keys = ["g", "n"], commands = ["cd ~/code/ics2023/nemu/src/monitor"] },
+  { keys = ["g", "o"], commands = ["cd ~/code/os/"] },
   { keys = ["g", "e"], commands = ["cd /etc"] },
   { keys = ["g", "h"], commands = ["cd ~/"] },
   { keys = ["?"], commands = ["help"] },

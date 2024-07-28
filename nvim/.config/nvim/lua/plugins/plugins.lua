@@ -34,10 +34,29 @@ return {
 		config = function()
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")
+			local function filename_first(_, path)
+				local tail = vim.fs.basename(path)
+				local parent = vim.fs.dirname(path)
+				if parent == "." then return tail end
+				return string.format("%s\t\t%s", tail, parent)
+			end
+
 
 			telescope.setup({
+
 				defaults = {
-					path_display = { "smart" },
+					path_display = function(opts, path)
+						local tail = vim.fs.basename(path)
+						local parent = vim.fs.dirname(path)
+						if parent == "." then return tail end
+						return string.format("%s (%s)", tail, parent)
+					end,
+					layout_config = {
+						width = 0.99,
+						height = 0.8,
+						preview_cutoff = 40,
+						preview_width = 0.6
+					},
 					mappings = {
 						i = {
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result

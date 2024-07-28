@@ -9,3 +9,4 @@ map.set("n", "<c-l>", "<c-w>l", { desc = "movewindow" })
 
 map.set({ "n", "v" }, "J", "5j", { desc = "5j" })
 map.set({ "n", "v" }, "K", "5k", { desc = "5j" })
+map.set({ "n", "v" }, "<leader>w", ":bd<CR>", { desc = "del buffer" })

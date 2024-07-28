@@ -3,6 +3,11 @@
 #
 # for examples
 # kk
+### temp alias
+alias mr="make run"
+alias mosaic="/home/yjc/code/os/04/mosaic/mosaic.py"
+alias collect="/home/yjc/code/os/04/mosaic/collect.py"
+export TLIB_PATH="/home/yjc/code/os/05/thread-lib"
 setproxy() {
 	export http_proxy=http://host.orb.internal:7890
 	export https_proxy=http://host.orb.internal:7890
