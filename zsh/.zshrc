@@ -9,7 +9,8 @@ alias cc="claude"
 alias python="python3.11"
 # go test
 alias gt="cd ~/code/test/"
-alias gsu="cd /Users/yjc/Google Drive/其他计算机/我的计算机/cloud/resume/"
+alias gsu='cd "/Users/yjc/Google Drive/其他计算机/我的计算机/cloud/resume/"'
+alias note='cd "/Users/yjc/Google Drive/其他计算机/我的计算机/cloud/Note"'
 #yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -73,8 +74,6 @@ function joshuto() {
 
 
 
-# mimocode
-export PATH=/Users/yjc/.mimocode/bin:$PATH
 
 # personal scripts
 export PATH=/Users/yjc/env/scripts:$PATH

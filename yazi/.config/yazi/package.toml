@@ -1,0 +1,7 @@
+[[plugin.deps]]
+use = "h-hg/yamb"
+rev = "5576bd7"
+hash = "2cf0dcda0e16e77342ae50c50134d238"
+
+[flavor]
+deps = []
